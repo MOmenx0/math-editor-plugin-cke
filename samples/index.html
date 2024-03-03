@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>CKEditor Sample</title>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.css">
+		<link rel="stylesheet" href="../mathquill/mathquill/mathquill.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.js" defer></script>
+
+		<link rel="stylesheet" href="../samples/index.css">
+		<script src=".././mathquill/mathquill-editor.js"></script>
+
+		<meta name="description" content="Try the latest sample of CKEditor 4 and learn more about customizing your WYSIWYG editor with endless possibilities.">
+	</head>
+
+<body id="main">
+
+	<div class="card tabs">
+		<input id="tab-1" type="radio" class="tab tab-selector" checked="checked" name="tab" />
+		<label for="tab-1" class="tab tab-primary"><b>∑</b></label>
+		<input id="tab-2" type="radio" class="tab tab-selector" name="tab" />
+		<label for="tab-2" class="tab tab-success">∰</label>
+		<input id="tab-3" type="radio" class="tab tab-selector" name="tab" />
+		<label for="tab-3" class="tab tab-default">⋑</label>
+		<input id="tab-4" type="radio" class="tab tab-selector" name="tab" />
+		<label for="tab-4" class="tab tab-warning">φ</label>
+		<div class="tabsShadow"></div>
+		<div class="glider"></div>
+		<section class="content">
+		  <div class="item" id="content-1">
+			<button class="toolbar-button" onclick="insertLatex('\\frac{x}{x}')">↉</button>
+			<button class="toolbar-button" onclick="insertLatex('\\sqrt{}');">√</button>
+			<button class="toolbar-button" onclick="insertLatex('\\sqrt[3]{\\square}');">³√</button>
+			<button class="toolbar-button" onclick="insertLatex('\\sqrt[\\square]{\\square}');">ˣ√</button>
+			<button class="toolbar-button" onclick="insertLatex('x^3');">x³</button>
+			<button class="toolbar-button" onclick="insertLatex('\\lceil x \\rceil')">⌈□⌉</button>
+			<button class="toolbar-button" onclick="insertLatex('\\{\}')">{□}</button>
+			<button class="toolbar-button" onclick="insertLatex('\\left(\\square\\right)')">(□)</button>
+			<button class="toolbar-button" onclick="insertLatex('\\cup')">∪</button>
+			<button class="toolbar-button" onclick="insertLatex('\\cap')">⋂</button>
+			<button class="toolbar-button" onclick="insertLatex('\\infty')">∞</button>
+			<button class="toolbar-button" onclick="insertLatex('\\pi')">π</button>
+			<button class="toolbar-button" onclick="insertLatex('\\triangle')">△</button>
+			<button class="toolbar-button" onclick="insertLatex('\\pm')">±</button>
+			<button class="toolbar-button" onclick="insertLatex('\\simeq')">≃</button>
+			<button class="toolbar-button" onclick="insertLatex('\\sim')">∼</button>
+			<button class="toolbar-button" onclick="insertLatex('\\le')">≤</button>
+			<button class="toolbar-button" onclick="insertLatex('\\ge')">≥</button>
+			<button class="toolbar-button" onclick="insertLatex('\\in')">∈</button>
+			<button class="toolbar-button" onclick="insertLatex('\\theta')">𝛳</button>
+			<button class="toolbar-button" onclick="insertLatex('\\alpha')">α</button>
+			<button class="toolbar-button" onclick="insertLatex('\\beta')">β</button>
+			<button class="toolbar-button" onclick="insertLatex('\\ge')">≥</button>
+			<button class="toolbar-button" onclick="insertLatex('\\in')">∈</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\oplus')">⊕</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\otimes')">⊗</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\ne')">≠</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\int')">∫</button>
+		    <button class="toolbar-button" onclick="insertLatex('|x|')">|x|</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\perp')">⊥</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\equiv')">≡</button>
+			<button class="toolbar-button" onclick="insertLatex('\\alpha')">α</button>
+            </div>
+			
+		  <div class="item" id="content-2">
+			<button class="toolbar-button" onclick="insertLatex('\\beta')">β</button>
+		  </div>
+
+		  <div class="item" id="content-3">
+			<button class="toolbar-button" onclick="insertLatex('\\alpha')">α</button>
+			<button class="toolbar-button" onclick="insertLatex('\\beta')">β</button>
+			<button class="toolbar-button" onclick="insertLatex('\\gamma')">γ</button>
+			<button class="toolbar-button" onclick="insertLatex('\\delta')">δ</button>
+			<button class="toolbar-button" onclick="insertLatex('\\epsilon')">ϵ</button>
+			<button class="toolbar-button" onclick="insertLatex('\\zeta')">ζ</button>
+			<button class="toolbar-button" onclick="insertLatex('\\eta')">η</button>
+			<button class="toolbar-button" onclick="insertLatex('\\theta')">𝛳</button>
+			<button class="toolbar-button" onclick="insertLatex('\\eta')">α</button>
+			<button class="toolbar-button" onclick="insertLatex('\\iota')">ι</button>
+			<button class="toolbar-button" onclick="insertLatex('\\kappa')">κ</button>
+			<button class="toolbar-button" onclick="insertLatex('\\Lambda')">Λ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\mu')">μ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\nu')">ν</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\Xi')">Ξ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\sigma')">ο</button>
+			<button class="toolbar-button" onclick="insertLatex('\\rho')">ρ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\varsigma')">ς</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\tau')">τ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\upsilon')">υ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\phi')">ϕ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\psi')">ψ</button>
+		    <button class="toolbar-button" onclick="insertLatex('\\Omega')">Ω</button>
+			<button class="toolbar-button" onclick="insertLatex('\\infty')">∞</button>
+			<button class="toolbar-button" onclick="insertLatex('\\pi')">π</button>
+			<button class="toolbar-button" onclick="insertLatex('\\triangle')">△</button>
+		  </div>
+		  <div class="item" id="content-4">
+
+		  </div>
+
+		</section>
+		<div class="form-group">
+			<div id="mathedit-latex-input-field" class="mathquill-editable equation-input"></div>
+			<input type="hidden" id="mathedit-latex" name="mathedit-latex-input-field" />
+		</div>
+	
+	  </div>
+
+	</form>
+			</body>	
+
+</html>

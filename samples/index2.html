@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2014-2023, CKSource Holding sp. z o.o. All rights reserved.
+Licensed under the terms of the MIT License (see LICENSE.md).
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor Sample</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../ckeditor.js"></script>
+    <script src="js/sample.js"></script>
+
+    <!-- MathQuill -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.min.js" defer></script>
+    <script src="../mathquill/mathquill-editor.js"></script>
+
+    <!-- jQuery Confirm -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+	
+
+    <!-- HTML2Canvas -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <meta name="description" content="Try the latest sample of CKEditor 4 and learn more about customizing your WYSIWYG editor with endless possibilities.">
+</head>
+
+<body>
+    <h1>Cke test add plugin</h1>
+
+	<textarea id="editor1" cols="10" rows="10">
+		&lt;p&gt;This is some sample text. You are using &lt;a href=&quot;http://ckeditor.com&quot;&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;
+	</textarea>
+        <!-- <div id="mathedit-latex-input-field" class="mathquill-editable equation-input"></div> -->
+
+	<script>
+		 window.onload = function() {
+		var updateDiv = function() {
+			var editorText = CKEDITOR.instances.editor1.getData();
+			$('#resarea').html(editorText);
+		};
+
+		CKEDITOR.replace( 'editor1', {
+			extraPlugins: 'timestamp,mathedit,onchange',
+			allowedContent : true,
+			toolbarGroups: [
+				{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+				{ name: 'links' },
+				{ name: 'insert' },
+				{ name: 'document',	   groups: [ 'mode' ] },
+				'/',
+				{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+				{ name: 'paragraph',   groups: [ 'list', 'indent' ] },
+				{ name: 'styles' },				
+			],
+			removePlugins: 'font,iframe,pagebreak,stylescombo,print,preview,save,smiley,pastetext,pastefromword',
+			removeButtons: 'Anchor,Font,Strike,Subscript,Superscript',
+			disableObjectResizing : true
+		} );
+		CKEDITOR.instances.editor1.on('change', updateDiv);
+    };
+	     
+
+         
+				
+		initSample() ;
+	</script>
+    
+</body>
+</html>
